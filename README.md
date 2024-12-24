@@ -8,11 +8,11 @@ Panduan ini menjelaskan cara membuat server Minecraft yang terintegrasi dengan C
 1. [Prasyarat](#prasyarat)
 2. [Instalasi Ubuntu Server 22.04](#instalasi-ubuntu-server-2204)
 3. [Instalasi CasaOS](#instalasi-casaos)
-4. [Instalasi dan Konfigurasi Server Minecraft dengan Crafty](#instalasi-dan-konfigurasi-server-minecraft-dengan-crafty)
-5. [Integrasi dengan Home Assistant, FileBrowser, dan qBittorrent](#integrasi-dengan-home-assistant-filebrowser-dan-qbittorrent)
-6. [Konfigurasi Tailscale](#konfigurasi-tailscale)
-7. [Pengaturan UFW](#pengaturan-ufw)
-
+4. [Instalasi dan Konfigurasi SSH](#instalasi-dan-konfigurasi-ssh)
+5. [Instalasi dan Konfigurasi Server Minecraft dengan Crafty](#instalasi-dan-konfigurasi-server-minecraft-dengan-crafty)
+6. [Integrasi dengan Home Assistant, FileBrowser, dan qBittorrent](#integrasi-dengan-home-assistant-filebrowser-dan-qbittorrent)
+7. [Konfigurasi Tailscale](#konfigurasi-tailscale)
+8. [Pengaturan UFW](#pengaturan-ufw)
 ---
 
 ## Prasyarat
@@ -92,6 +92,42 @@ After logging into your Ubuntu Server:
 
 ---
 
+## Instalasi dan Konfigurasi SSH
+
+Setelah instalasi CasaOS, Anda dapat mengatur SSH untuk memastikan Anda dapat mengakses server secara remote dengan aman:
+
+1. Periksa apakah layanan SSH sudah terinstal:
+   ```bash
+   sudo systemctl status ssh
+   ```
+   Jika belum terinstal, instal OpenSSH Server:
+   ```bash
+   sudo apt install openssh-server
+   ```
+2. Aktifkan dan mulai layanan SSH:
+   ```bash
+   sudo systemctl enable ssh
+   sudo systemctl start ssh
+   ```
+3. Konfigurasi firewall untuk mengizinkan akses SSH:
+   ```bash
+   sudo ufw allow ssh
+   ```
+4. Uji koneksi SSH dari perangkat lain:
+   ```bash
+   ssh username@server_ip_address
+   ```
+5. (Opsional) Untuk keamanan tambahan, ubah port default SSH di file konfigurasi:
+   ```bash
+   sudo nano /etc/ssh/sshd_config
+   ```
+   Ubah baris `Port 22` ke nomor port yang diinginkan, lalu restart layanan SSH:
+   ```bash
+   sudo systemctl restart ssh
+   ```
+
+---
+
 ## Instalasi dan Konfigurasi Server Minecraft dengan Crafty
 
 1. Buka CasaOS dan navigasikan ke App Store.
@@ -124,9 +160,15 @@ After logging into your Ubuntu Server:
 1. Instal Home Assistant melalui App Store di CasaOS.
 2. Konfigurasikan Home Assistant untuk mengotomasi tugas atau memantau lingkungan server Anda.
 
+   <img width="960" alt="dashboard homeAssist" src="https://github.com/user-attachments/assets/fdf93bb9-f100-4d74-9193-c318363abd10" />
+
+
 ### FileBrowser
 1. Instal FileBrowser dari App Store di CasaOS.
 2. Gunakan FileBrowser untuk mengelola sistem file server melalui antarmuka web.
+
+   <img width="960" alt="dashboard fileBrowser" src="https://github.com/user-attachments/assets/b4f4af3b-8047-4ed4-9f66-872a80774efa" />
+
 
 ### qBittorrent
 1. Instal qBittorrent melalui App Store di CasaOS.
