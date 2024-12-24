@@ -1,5 +1,4 @@
-# Minecraft Server Setup dengan CasaOS pada Ubuntu Server 22.04
-# 23.83.1033
+# Minecraft Server Setup dengan CasaOS pada Ubuntu Server 22.04 - 23.83.1033
 
 Panduan ini menjelaskan cara membuat server Minecraft yang terintegrasi dengan CasaOS pada Ubuntu Server 22.04. Konfigurasi ini juga mencakup penggunaan Tailscale untuk akses jarak jauh yang aman, UFW untuk manajemen firewall, serta Home Assistant, FileBrowser, dan qBittorrent yang diinstal dari App Store CasaOS. CasaOS menggunakan Docker container untuk mengelola aplikasi, sehingga memudahkan instalasi dan pemeliharaan.
 
