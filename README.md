@@ -12,7 +12,6 @@ Panduan ini menjelaskan cara membuat server Minecraft yang terintegrasi dengan C
 5. [Integrasi dengan Home Assistant, FileBrowser, dan qBittorrent](#integrasi-dengan-home-assistant-filebrowser-dan-qbittorrent)
 6. [Konfigurasi Tailscale](#konfigurasi-tailscale)
 7. [Pengaturan UFW](#pengaturan-ufw)
-8. [Kesimpulan](#kesimpulan)
 
 ---
 
@@ -99,7 +98,23 @@ After logging into your Ubuntu Server:
 2. Cari aplikasi "Crafty" dan instal.
 3. Setelah instalasi selesai, buka Crafty dan ikuti panduan dalam aplikasi untuk mengatur server Minecraft.
    - Buat instance server baru dengan pengaturan yang diinginkan (misalnya versi server, mod, dll.).
+
+   
+   <img width="560" alt="crafty-1" src="https://github.com/user-attachments/assets/02da23bd-058e-4cda-b0dd-400b831442f3" />
+
+   <img width="933" alt="crafty-2" src="https://github.com/user-attachments/assets/b8ae3005-e9ee-4b36-994d-94842bda9f24" />
+
+   
 4. Jalankan server Minecraft dan pantau kinerjanya melalui dashboard Crafty.
+
+   <img width="947" alt="crafty-3" src="https://github.com/user-attachments/assets/246724cf-00ef-411f-b851-ffeb52ab8095" />
+
+   <img width="565" alt="crafty-4" src="https://github.com/user-attachments/assets/6f928bcb-4caa-4cc7-83b9-9dfd8be16594" />
+
+   <img width="946" alt="crafty-5" src="https://github.com/user-attachments/assets/a0d4a669-d85c-4b48-9647-0f1b21d28a2c" />
+
+   <img width="960" alt="crafty-6" src="https://github.com/user-attachments/assets/22e5bc8e-4cc6-4402-9ce4-4d22acf36661" />
+
 
 ---
 
@@ -126,7 +141,13 @@ After logging into your Ubuntu Server:
    curl -fsSL https://tailscale.com/install.sh | sh
    sudo tailscale up
    ```
+   
+   <img width="429" alt="tailscale-1" src="https://github.com/user-attachments/assets/6b9a4471-7ade-4cf9-a1ae-203b224fc5e8" />
+
 2. Autentikasi perangkat Anda melalui URL yang diberikan.
+
+   <img width="427" alt="tailscale-2" src="https://github.com/user-attachments/assets/f7629396-4198-45a9-9937-bd15166a35e9" />
+
 3. Gunakan Tailscale untuk mengakses server Minecraft dan aplikasi CasaOS Anda dengan aman dari jarak jauh.
 
 ---
